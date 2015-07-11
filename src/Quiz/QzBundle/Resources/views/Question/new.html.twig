@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Question creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('question') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+            
+            
+            
+  <script type="text/javascript">
+        
+        $(document).ready(function() {
+            var ischecked0,ischecked1, checked;
+            ischecked0 = $("#quiz_qzbundle_question_responseType_0").attr('checked');
+            ischecked1 = $("#quiz_qzbundle_question_responseType_1").attr('checked');
+            
+            $("input").on( "click", function() {
+                checked = $("input:checked").val() ;
+               if (checked == 1) {
+                 $("#quiz_qzbundle_question_attachement_file").parent().show(); 
+                 $("#quiz_qzbundle_question_questionText").parent().hide();
+                 $("#quiz_qzbundle_question_questionTextEn").parent().hide();
+               }  
+                 
+               else{
+                $("#quiz_qzbundle_question_attachement_file").parent().hide();
+                $("#quiz_qzbundle_question_questionText").parent().show();
+                $("#quiz_qzbundle_question_questionTextEn").parent().show();
+               }
+                   
+            });
+            
+            if (ischecked0 != "checked")   
+               $("#quiz_qzbundle_question_attachement_file").parent().hide(); 
+            
+            if (ischecked1 != "checked")  {
+                $("#quiz_qzbundle_question_questionText").parent().hide();
+                $("#quiz_qzbundle_question_questionTextEn").parent().hide();
+            } 
+               
+                
+         });
+         
+    </script>   
+    
+{% endblock %}

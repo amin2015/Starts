@@ -1,0 +1,18 @@
+quiz_qz_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: QuizQzBundle:Default:index }
+    
+quiz_qst_index:
+    resource: "@QuizQzBundle/Controller/QuestionnaireController.php"
+    type:     annotation
+    prefix:   /    
+    
+quiz_qt_index:
+    resource: "@QuizQzBundle/Controller/QuestionController.php"
+    type:     annotation
+    prefix:   /       
+
+quiz_response_index:
+    resource: "@QuizQzBundle/Controller/ResponseController.php"
+    type:     annotation
+    prefix:   / 
